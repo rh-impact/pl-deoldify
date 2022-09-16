@@ -11,7 +11,8 @@
 from chrisapp.base import ChrisApp
 import subprocess, os, re
 from argparse import ArgumentParser, Namespace, ArgumentDefaultsHelpFormatter
-Gstr_title = r""" 
+
+Gstr_title = r"""
      _            _     _ _  __       
     | |          | |   | (_)/ _|      
   __| | ___  ___ | | __| |_| |_ _   _ 
@@ -87,10 +88,10 @@ where necessary.)
 
 class Deoldify(ChrisApp):
     """
-    An app to convert old images to color images
+    An app to colorize images. 
     """
     PACKAGE                 = __package__
-    TITLE                   = 'A Chris Plugin for Deoldify.'
+    TITLE                   = 'A ChRIS plugin for deoldify'
     CATEGORY                = ''
     TYPE                    = 'ds'
     ICON                    = ''   # url of an icon image
@@ -126,12 +127,13 @@ class Deoldify(ChrisApp):
         """
         print(Gstr_title)
         print('Version: %s' % self.get_version())
-        print('Conversion of old images to color images %s' % (options.inputdit, options.outputdir))
+        print('Conversion of old images to color images %s' % (options.inputdir, options.outputdir))
         for filename in os.listdir(options.inputdir):
-            inputpath = os.path.join(options.inputdir, filename)
-            outputpath = os.path.join(options.outputdir, re.sub('\.\w+', '.jpg',filename ))
-            # parser = ArgumentParser("Parse the input arguments for the deoldify script", formatter_class=ArgumentDefaultsHelpFormatter)
-        
+        inputpath = os.path.join(options.inputdir, filename)
+        outputpath = os.path.join(options.outputdir, re.sub('\.\w+', '.jpg',filename ))
+        parser = ArgumentParser("Parse the input arguments for the deoldify script", formatter_class=ArgumentDefaultsHelpFormatter)
+        parser.add_argument('--render_factor', type=int, default=35, help='Render factor')
+
     def show_man_page(self):
         """
         Print the app's man page.

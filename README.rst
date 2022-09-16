@@ -17,7 +17,7 @@ pl-deoldify
 Abstract
 --------
 
-An app to convert old images to color images
+An application to colorize images and videos. 
 
 
 Description
@@ -69,23 +69,22 @@ Arguments
     If specified, print version number and exit. 
 
 
-Getting inline help is:
+.Getting inline help is:
 
 .. code:: bash
 
-    docker run --rm fnndsc/pl-deoldify deoldify --man
+    podman run --rm fnndsc/SAG-anon deoldify --man
 
-Run
-~~~
+.Run
 
 You need to specify input and output directories using the `-v` flag to `docker run`.
 
 
 .. code:: bash
 
-    docker run --rm -u $(id -u)                             \
+    podman run --rm -u $(id -u)                             \
         -v $(pwd)/in:/incoming -v $(pwd)/out:/outgoing      \
-        fnndsc/pl-deoldify deoldify                        \
+        fnndsc/SAG-anon deoldify                        \
         /incoming /outgoing
 
 

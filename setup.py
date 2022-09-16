@@ -7,10 +7,10 @@ with open(path.join(path.dirname(path.abspath(__file__)), 'README.rst')) as f:
 setup(
     name             = 'deoldify',
     version          = '0.1',
-    description      = 'An app to convert old images to color images',
+    description      = 'An app to colorize images. ',
     long_description = readme,
-    author           = 'Rigin Oommen',
-    author_email     = 'riginoommen@gmail.com',
+    author           = 'Ranjini M N',
+    author_email     = 'rmandyam@redhat.com',
     url              = 'http://wiki',
     packages         = ['deoldify'],
     install_requires = ['chrisapp'],
