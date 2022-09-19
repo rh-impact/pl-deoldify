@@ -22,7 +22,7 @@
 #
 
 FROM python:3.9.1-slim-buster
-LABEL maintainer="Rigin Oommen <riginoommen@gmail.com>"
+LABEL maintainer="Ranjini M N <rmandyam@redhat.com>"
 
 WORKDIR /usr/local/src
 
@@ -33,6 +33,7 @@ COPY . .
 RUN pip install .
 
 RUN apt-get -y update
-RUN pip install DeOldify 
+RUN pip install DeOldify
+
 
 CMD ["deoldify", "--help"]

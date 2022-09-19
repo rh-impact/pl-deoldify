@@ -11,20 +11,21 @@
 from chrisapp.base import ChrisApp
 import subprocess, os, re
 from argparse import ArgumentParser, Namespace, ArgumentDefaultsHelpFormatter
-Gstr_title = r""" 
-     _            _     _ _  __       
-    | |          | |   | (_)/ _|      
-  __| | ___  ___ | | __| |_| |_ _   _ 
+
+Gstr_title = r"""
+     _            _     _ _  __
+    | |          | |   | (_)/ _|
+  __| | ___  ___ | | __| |_| |_ _   _
  / _` |/ _ \/ _ \| |/ _` | |  _| | | |
 | (_| |  __/ (_) | | (_| | | | | |_| |
  \__,_|\___|\___/|_|\__,_|_|_|  \__, |
                                  __/ |
-                                |___/ 
+                                |___/
 """
 
 Gstr_synopsis = """
 
-(Edit this in-line help for app specifics. At a minimum, the 
+(Edit this in-line help for app specifics. At a minimum, the
 flags below are supported -- in the case of DS apps, both
 positional arguments <inputDir> and <outputDir>; for FS and TS apps
 only <outputDir> -- and similarly for <in> <out> directories
@@ -45,7 +46,7 @@ where necessary.)
             [-v <level>] [--verbosity <level>]                          \\
             [--version]                                                 \\
             <inputDir>                                                  \\
-            <outputDir> 
+            <outputDir>
 
     BRIEF EXAMPLE
 
@@ -64,33 +65,33 @@ where necessary.)
 
         [-h] [--help]
         If specified, show help message and exit.
-        
+
         [--json]
         If specified, show json representation of app and exit.
-        
+
         [--man]
         If specified, print (this) man page and exit.
 
         [--meta]
         If specified, print plugin meta data and exit.
-        
-        [--savejson <DIR>] 
-        If specified, save json representation file to DIR and exit. 
-        
+
+        [--savejson <DIR>]
+        If specified, save json representation file to DIR and exit.
+
         [-v <level>] [--verbosity <level>]
         Verbosity level for app. Not used currently.
-        
+
         [--version]
-        If specified, print version number and exit. 
+        If specified, print version number and exit.
 """
 
 
 class Deoldify(ChrisApp):
     """
-    An app to convert old images to color images
+    An app to colorize images.
     """
     PACKAGE                 = __package__
-    TITLE                   = 'A Chris Plugin for Deoldify.'
+    TITLE                   = 'A ChRIS plugin for deoldify'
     CATEGORY                = ''
     TYPE                    = 'ds'
     ICON                    = ''   # url of an icon image
@@ -126,12 +127,15 @@ class Deoldify(ChrisApp):
         """
         print(Gstr_title)
         print('Version: %s' % self.get_version())
-        print('Conversion of old images to color images %s' % (options.inputdit, options.outputdir))
-        for filename in os.listdir(options.inputdir):
-            inputpath = os.path.join(options.inputdir, filename)
-            outputpath = os.path.join(options.outputdir, re.sub('\.\w+', '.jpg',filename ))
-            # parser = ArgumentParser("Parse the input arguments for the deoldify script", formatter_class=ArgumentDefaultsHelpFormatter)
-        
+        # print('Conversion of old images to  color images %s' % (options.inputdir, options.outputdir))
+        # for filename in os.listdir(options.inputdir):
+        #    inputpath = os.path.join(options.inputdir, filename)
+        #    outputpath = os.path.join(options.outputdir, re.sub('\.\w+', '.jpg',filename ))
+        #    parser = ArgumentParser("Parse the input arguments for the deoldify script", formatter_class=ArgumentDefaultsHelpFormatter)
+        #    parser.add_argument('--render_factor', type=int, default=35, help='Render factor')
+
+
+
     def show_man_page(self):
         """
         Print the app's man page.
