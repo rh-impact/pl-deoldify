@@ -33,7 +33,7 @@ COPY . .
 RUN pip install .
 
 RUN apt-get -y update
-RUN apt-get -y install DeOldify 
+# RUN apt-get -y install DeOldify 
 
 
 CMD ["deoldify", "--help"]
