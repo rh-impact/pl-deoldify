@@ -127,7 +127,7 @@ class Deoldify(ChrisApp):
         """
         print(Gstr_title)
         print('Version: %s' % self.get_version())
-        print('Conversion of old images to  color images %s' % (options.inputdir, options.outputdir))
+        # print('Conversion of old images to  color images %s' % (options.inputdir, options.outputdir))
         # for filename in os.listdir(options.inputdir):
         #    inputpath = os.path.join(options.inputdir, filename)
         #    outputpath = os.path.join(options.outputdir, re.sub('\.\w+', '.jpg',filename ))
