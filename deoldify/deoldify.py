@@ -127,10 +127,10 @@ class Deoldify(ChrisApp):
         """
         print(Gstr_title)
         print('Version: %s' % self.get_version())
-        print('Conversion of old images to color images %s' % (options.inputdir, options.outputdir))
-        for filename in os.listdir(options.inputdir):
-            inputpath = os.path.join(options.inputdir, filename)
-            outputpath = os.path.join(options.outputdir, re.sub('\.\w+', '.jpg',filename ))
+        print('Conversion of old images to  color images %s' % (options.inputdir, options.outputdir))
+        # for filename in os.listdir(options.inputdir):
+        #    inputpath = os.path.join(options.inputdir, filename)
+        #    outputpath = os.path.join(options.outputdir, re.sub('\.\w+', '.jpg',filename ))
         #    parser = ArgumentParser("Parse the input arguments for the deoldify script", formatter_class=ArgumentDefaultsHelpFormatter)
         #    parser.add_argument('--render_factor', type=int, default=35, help='Render factor')
 
